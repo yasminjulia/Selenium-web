@@ -2,6 +2,7 @@ package Testes;
 
 import Pages.LoginPage;
 import Suport.Web;
+import org.apache.log4j.BasicConfigurator;
 import org.easetech.easytest.annotation.DataLoader;
 import org.easetech.easytest.annotation.Param;
 import org.easetech.easytest.runner.DataDrivenTestRunner;
@@ -19,6 +20,8 @@ public class InformacoesUsuarioTestPageObject {
     @Before
     public void setUp(){
     navegador = Web.createBrowserStack();
+    BasicConfigurator.configure();
+
     }
     @Test
     public void testAdicionarUmaInfoUsuario( @Param(name = "login")String login,
